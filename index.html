@@ -129,9 +129,9 @@
       .scroll-hint i::after { content: ""; width: 3px; height: 6px; background: var(--blue); border-radius: 2px; position: absolute; top: 6px; left: 7px; animation: scroll-dot 1.9s infinite; }
 
       .marquee { overflow: hidden; margin: 26px calc(50% - 50vw) 0; padding: 17px 0; border-block: 1px solid var(--line); background: #fff; }
-      .marquee-track { display: flex; width: max-content; gap: 44px; animation: marquee 38s linear infinite; font: 500 21px Fraunces, Georgia, serif; letter-spacing: -.03em; color: var(--ink); white-space: nowrap; }
+      .marquee-track { display: flex; flex-wrap: nowrap; width: max-content; gap: 0; will-change: transform; animation: marquee 38s linear infinite; font: 500 21px Fraunces, Georgia, serif; letter-spacing: -.03em; color: var(--ink); white-space: nowrap; }
       .marquee:hover .marquee-track { animation-play-state: paused; }
-      .marquee-track span { display: inline-flex; align-items: center; gap: 44px; }
+      .marquee-track span { flex: none; display: inline-flex; align-items: center; gap: 44px; padding-right: 44px; }
       .marquee-track span::after { content: "✦"; color: var(--coral); font-size: 13px; }
 
       .trust { padding: 72px 0 64px; display: grid; grid-template-columns: 1.1fr repeat(3, .8fr); gap: 20px; align-items: center; }

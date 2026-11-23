@@ -151,13 +151,17 @@
       .hero-copy > :not(.flow) { position: relative; z-index: 1; }
 
       .story, .vision { position: relative; overflow: hidden; border-radius: 24px; color: #f4f6ff; background: linear-gradient(135deg, #2f3f93 0%, #29377e 42%, #171f4a 100%); background-size: 160% 160%; animation: bg-drift 18s ease-in-out infinite alternate; }
-      .story { margin: 26px 0 0; padding: clamp(46px, 7vw, 92px) clamp(24px, 6vw, 84px); }
+      .story { margin: 8px 0 0; padding: clamp(46px, 7vw, 92px) clamp(24px, 6vw, 84px); }
       .story .eyebrow, .vision .eyebrow { color: #aebcf5; }
       .story-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(230px, 310px) minmax(0, 1fr); gap: clamp(34px, 7vw, 96px); align-items: center; }
       .story-video { display: grid; justify-items: center; gap: 18px; }
       .story-video .clip-video { width: 100%; box-shadow: 0 34px 80px rgba(8,12,40,.5); transform: rotate(-2deg); transition: transform .6s var(--ease); }
       .story-video:hover .clip-video { transform: rotate(0) scale(1.02); }
-      .story-copy h2 { max-width: none; font-size: clamp(40px, 5.2vw, 72px); line-height: 1; }
+      .story-copy h1 { max-width: none; font-size: clamp(42px, 5.6vw, 78px); line-height: 1; }
+      .story .hero-actions { margin-top: 30px; }
+      .story .cta { background: var(--gold); color: #1a2350; box-shadow: 0 14px 30px rgba(8,12,40,.35); }
+      .story .cta:hover { background: #ffd27a; }
+      .story .text-link { color: #fff; border-color: rgba(255,255,255,.5); }
       .story-num { color: var(--gold); font-variant-numeric: tabular-nums; }
       .story-copy p { max-width: 520px; margin: 24px 0 0; color: #cfd6f5; font-size: 17px; line-height: 1.65; }
       .timeline { position: relative; list-style: none; margin: 34px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -483,6 +487,7 @@
         .contact, .faq { grid-template-columns: 1fr; }
         .vision-grid, .reel-experience, .story-grid { grid-template-columns: 1fr; }
         .story-video .clip-video, .founder { width: min(100%, 290px); margin-inline: auto; }
+        .story-copy { order: -1; }
         .timeline { grid-template-columns: 1fr; gap: 20px; }
         .timeline::before { left: 6px; right: auto; top: 6px; bottom: 6px; width: 2px; height: auto; transform: scaleY(0); transform-origin: 50% 0; }
         .visible .timeline::before { transform: scaleY(1); }
@@ -564,32 +569,6 @@
 
     <div class="shell">
       <main id="anasayfa">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-copy">
-            <svg class="flow" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="rb r1" d="M-120 470 C 180 300 420 620 720 420 S 1120 220 1340 360"/><path class="rb r2" d="M-140 250 C 160 120 380 360 660 210 S 1080 40 1340 150"/><path class="rb r3" d="M-100 640 C 240 520 520 720 820 570 S 1160 480 1340 560"/><circle class="dot d1" cx="210" cy="140" r="9"/><circle class="dot d2" cx="980" cy="110" r="14"/><circle class="dot d3" cx="1080" cy="470" r="7"/><circle class="dot d4" cx="420" cy="520" r="5"/></svg>
-            <div class="eyebrow">Mavi Barış Özel Eğitim · Ankara</div>
-            <h1 id="hero-title" aria-label="Her yolculuk kendine özgü."><span class="w" aria-hidden="true"><span style="--i:0">Her</span></span> <span class="w" aria-hidden="true"><span style="--i:1">yolculuk</span></span> <em><span class="w" aria-hidden="true"><span style="--i:2">kendine</span></span> <span class="w" aria-hidden="true"><span style="--i:3">özgü.</span></span></em></h1>
-            <p class="lead">Çocuğunuzun güçlü yanlarını birlikte keşfediyor; güvenli, neşeli ve nitelikli bir öğrenme alanı oluşturuyoruz.</p>
-            <div class="hero-actions">
-              <a class="cta" data-route href="#iletisim">Görüşme planlayın <span>→</span></a>
-              <a class="text-link" data-route href="#hikaye">33 yıllık hikâyemiz ↗</a>
-            </div>
-            <div class="scroll-hint"><i></i> Keşfetmek için kaydırın</div>
-          </div>
-          <div class="hero-visual" data-parallax>
-            <img class="hero-img" id="hero-img" src="foto/MAVI_BARIS-020.jpg" alt="Eğitmen ve öğrenci masada çalışırken çak yapıyor" fetchpriority="high" />
-            <span class="hero-orbit" aria-hidden="true"></span><span class="hero-spark" aria-hidden="true">✦</span>
-            <div class="floating-note"><strong>Birlikte</strong> Her küçük ilerlemeyi görünür, her adımı değerli kılıyoruz.</div>
-          </div>
-        </section>
-
-        <div class="marquee" aria-hidden="true">
-          <div class="marquee-track">
-            <span>Otizm spektrumu</span><span>Erken müdahale</span><span>Okul çağı desteği</span><span>Duyu ve algı</span><span>Aileyle iş birliği</span><span>Oyun ve hareket</span><span>Bireysel plan</span>
-            <span>Otizm spektrumu</span><span>Erken müdahale</span><span>Okul çağı desteği</span><span>Duyu ve algı</span><span>Aileyle iş birliği</span><span>Oyun ve hareket</span><span>Bireysel plan</span>
-          </div>
-        </div>
-
         <section class="story reveal" id="hikaye" aria-labelledby="story-title">
           <svg class="flow" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="rb r1" d="M-120 470 C 180 300 420 620 720 420 S 1120 220 1340 360"/><path class="rb r2" d="M-140 250 C 160 120 380 360 660 210 S 1080 40 1340 150"/><path class="rb r3" d="M-100 640 C 240 520 520 720 820 570 S 1160 480 1340 560"/><circle class="dot d1" cx="210" cy="140" r="9"/><circle class="dot d2" cx="980" cy="110" r="14"/><circle class="dot d3" cx="1080" cy="470" r="7"/><circle class="dot d4" cx="420" cy="520" r="5"/></svg>
           <div class="story-grid">
@@ -598,9 +577,13 @@
               <a class="ig-btn" href="https://www.instagram.com/mavvi_baris/reel/DXOvLw3gqVc/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.500A4.500 4.500 0 1 1 12 16.500 4.500 4.500 0 0 1 12 7.500Zm0 2A2.500 2.500 0 1 0 12 14.500 2.500 2.500 0 0 0 12 9.500ZM17.300 6a1.100 1.100 0 1 1 0 2.200 1.100 1.100 0 0 1 0-2.200Z"/></svg>Instagram’da izleyin</a>
             </div>
             <div class="story-copy">
-              <div class="eyebrow">33 yıllık hikâyemiz</div>
-              <h2 id="story-title"><span class="story-num" data-count="33">33</span> yıl önce<br>bir düş başladı.</h2>
+              <div class="eyebrow">Mavi Barış Özel Eğitim · Ankara · 33 yıllık hikâyemiz</div>
+              <h1 id="story-title"><span class="story-num" data-count="33">33</span> yıl önce<br>bir düş başladı.</h1>
               <p>Her çocuğun kendi kahramanlığını keşfedebileceği, her ailenin yalnız olmadığı bir yer kurmak için yola çıktık. 1993’ten bu yana binlerce çocuğun gelişimine, binlerce ailenin yolculuğuna eşlik ediyoruz.</p>
+              <div class="hero-actions">
+                <a class="cta" data-route href="#iletisim">Görüşme planlayın <span>→</span></a>
+                <a class="text-link" data-route href="#programlar">Programlarımızı görün ↗</a>
+              </div>
               <ol class="timeline">
                 <li style="--i:0"><b>1993</b><span>Barış Özel Eğitim ve Rehabilitasyon Merkezi kuruldu.</span></li>
                 <li style="--i:1"><b>2007</b><span>“Mavi Barış” adını aldı.</span></li>
@@ -610,6 +593,13 @@
             </div>
           </div>
         </section>
+
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Otizm spektrumu</span><span>Erken müdahale</span><span>Okul çağı desteği</span><span>Duyu ve algı</span><span>Aileyle iş birliği</span><span>Oyun ve hareket</span><span>Bireysel plan</span>
+            <span>Otizm spektrumu</span><span>Erken müdahale</span><span>Okul çağı desteği</span><span>Duyu ve algı</span><span>Aileyle iş birliği</span><span>Oyun ve hareket</span><span>Bireysel plan</span>
+          </div>
+        </div>
 
         <section class="trust reveal" aria-label="Mavi Barış özeti">
           <div><div class="eyebrow">Bizi farklı kılan</div><p>Yakın iletişim, bireye göre planlanan eğitim ve çocuğun ritmine saygı duyan bir ekip.</p></div>

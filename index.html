@@ -92,6 +92,9 @@
       .cta.ghost:hover { background: #fff; }
       .cta.wa { background: #1f8f5f; box-shadow: 0 10px 22px rgba(31,143,95,.2); }
       .cta.wa:hover { background: #17764d; }
+      .header-actions { display: flex; align-items: center; gap: 10px; }
+      .lang { padding: 11px 14px; border: 1px solid #b8c2e6; border-radius: 10px; background: transparent; color: var(--ink); font-size: 13px; font-weight: 700; cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
+      .lang:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
       .menu { display: none; border: 0; background: transparent; color: var(--ink); font-size: 22px; cursor: pointer; }
 
       .hero { min-height: min(640px, calc(100vh - 150px)); margin-top: 8px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: stretch; border-radius: 24px; overflow: hidden; background: #dfe5f5; position: relative; }
@@ -155,8 +158,7 @@
       .story .eyebrow, .vision .eyebrow { color: #aebcf5; }
       .story-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(230px, 310px) minmax(0, 1fr); gap: clamp(34px, 7vw, 96px); align-items: center; }
       .story-video { display: grid; justify-items: center; gap: 18px; }
-      .story-video .clip-video { width: 100%; box-shadow: 0 34px 80px rgba(8,12,40,.5); transform: rotate(-2deg); transition: transform .6s var(--ease); }
-      .story-video:hover .clip-video { transform: rotate(0) scale(1.02); }
+      .story-video .clip-video { width: 100%; box-shadow: 0 34px 80px rgba(8,12,40,.5); }
       .story-copy h1 { max-width: none; font-size: clamp(42px, 5.6vw, 78px); line-height: 1; }
       .story .hero-actions { margin-top: 30px; }
       .story .cta { background: var(--gold); color: #1a2350; box-shadow: 0 14px 30px rgba(8,12,40,.35); }
@@ -174,7 +176,7 @@
       .timeline span { display: block; margin-top: 8px; color: #c2caee; font-size: 14px; line-height: 1.5; }
       .story-copy .story-motto { margin-top: 30px; color: var(--gold); font: 500 22px Fraunces, Georgia, serif; letter-spacing: -.03em; }
       .clip-video { position: relative; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 22px; background: #0f1533; }
-      .clip-video iframe { position: absolute; top: -54px; left: -21.11%; width: 142.22%; height: calc(100% + 58px); border: 0; background: #0f1533; }
+      .clip-video iframe { overflow: hidden; position: absolute; top: -54px; left: -21.11%; width: 142.22%; height: calc(100% + 58px); border: 0; background: #0f1533; }
       .ig-btn { display: inline-flex; align-items: center; gap: 9px; padding: 12px 18px; border-radius: 99px; background: #fff; color: var(--blue); font-size: 14px; font-weight: 700; box-shadow: 0 12px 26px rgba(8,12,40,.28); transition: transform .25s, background .25s, color .25s; }
       .ig-btn:hover { transform: translateY(-2px); background: var(--gold); color: #1a2350; }
       .ig-btn svg { width: 18px; height: 18px; fill: currentColor; }
@@ -253,7 +255,7 @@
       .team-pill figure span { position: absolute; left: 18px; top: 18px; }
       .team-pill > div { padding: 22px 24px 26px; }
       .team-pill { align-self: start; }
-      .team-pill .illo { flex: 0 0 auto; min-height: 0; aspect-ratio: 320 / 230; }
+      .team-pill .illo { flex: 0 0 auto; min-height: 0; aspect-ratio: 320 / 262; }
       .illo * { transform-box: fill-box; }
       .illo .drift { transform-origin: 50% 50%; animation: drift-slow 11s ease-in-out infinite alternate; animation-delay: var(--t, 0s); }
       .illo .nod { transform-origin: 50% 100%; animation: nod 4.2s ease-in-out infinite; }
@@ -428,8 +430,8 @@
       @keyframes step { 0%, 100% { opacity: 0; } 40%, 60% { opacity: 1; } }
       @keyframes walk { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-5px) rotate(2deg); } }
       @keyframes idea { 0% { opacity: 0; transform: translate(0, 0) scale(.4); } 14% { opacity: 1; transform: translate(0, -6px) scale(1); } 52% { opacity: 1; transform: translate(var(--tx), var(--ty)) scale(1); } 62%, 100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(.2); } }
-      @keyframes bulb { 0%, 52% { transform: scale(.78); opacity: .55; } 64% { transform: scale(1.250); opacity: 1; } 78%, 92% { transform: scale(1); opacity: 1; } 100% { transform: scale(.78); opacity: .55; } }
-      @keyframes bulb-glow { 0%, 52% { transform: scale(.6); opacity: 0; } 66% { transform: scale(1.500); opacity: .4; } 92% { transform: scale(1.200); opacity: .22; } 100% { transform: scale(.6); opacity: 0; } }
+      @keyframes bulb { 0%, 52% { transform: scale(.78); opacity: .55; } 64% { transform: scale(1.15); opacity: 1; } 78%, 92% { transform: scale(1); opacity: 1; } 100% { transform: scale(.78); opacity: .55; } }
+      @keyframes bulb-glow { 0%, 52% { transform: scale(.6); opacity: 0; } 66% { transform: scale(1.3); opacity: .38; } 92% { transform: scale(1.1); opacity: .2; } 100% { transform: scale(.6); opacity: 0; } }
       @keyframes bulb-rays { 0%, 58% { opacity: 0; transform: scale(.7); } 70%, 90% { opacity: 1; transform: scale(1.100); } 100% { opacity: 0; transform: scale(.7); } }
       @keyframes page { 0%, 20% { transform: scaleX(1); } 50% { transform: scaleX(-1); } 70%, 100% { transform: scaleX(-1); opacity: 0; } }
       @keyframes sway1 { from { transform: translate(-46px, -18px) rotate(-2deg) scaleY(.9); } to { transform: translate(52px, 26px) rotate(2.5deg) scaleY(1.12); } }
@@ -467,7 +469,9 @@
         nav { display: none; position: absolute; top: 66px; left: 16px; right: 16px; z-index: 5; padding: 18px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 14px 30px rgba(30,53,75,.12); flex-direction: column; align-items: flex-start; gap: 15px; }
         nav.open { display: flex; }
         .menu { display: block; }
-        header > .cta { display: none; }
+        .header-actions .cta { display: none; }
+        .header-actions { margin-left: auto; }
+        .lang { padding: 8px 12px; }
         .hero, .split { grid-template-columns: 1fr; }
         .hero { min-height: 0; }
         .hero-copy { padding: 54px 30px 46px; }
@@ -562,18 +566,18 @@
             <a data-route href="#sss">Sorular</a>
             <a data-route href="#iletisim">İletişim</a>
           </nav>
-          <a class="cta" data-route href="#iletisim">Bize ulaşın <span>→</span></a>
+          <div class="header-actions"><button class="lang" id="lang-btn" type="button" aria-label="Switch to English">English</button><a class="cta" data-route href="#iletisim">Bize ulaşın <span>→</span></a></div>
         </header>
       </div>
     </div>
 
     <div class="shell">
       <main id="anasayfa">
-        <section class="story reveal" id="hikaye" aria-labelledby="story-title">
+        <section class="story reveal visible" id="hikaye" aria-labelledby="story-title">
           <svg class="flow" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="rb r1" d="M-120 470 C 180 300 420 620 720 420 S 1120 220 1340 360"/><path class="rb r2" d="M-140 250 C 160 120 380 360 660 210 S 1080 40 1340 150"/><path class="rb r3" d="M-100 640 C 240 520 520 720 820 570 S 1160 480 1340 560"/><circle class="dot d1" cx="210" cy="140" r="9"/><circle class="dot d2" cx="980" cy="110" r="14"/><circle class="dot d3" cx="1080" cy="470" r="7"/><circle class="dot d4" cx="420" cy="520" r="5"/></svg>
           <div class="story-grid">
             <div class="story-video">
-              <div class="clip-video"><iframe title="Mavi Barış 33. yıl videosu" loading="lazy" src="https://www.instagram.com/reel/DXOvLw3gqVc/embed/"></iframe></div>
+              <div class="clip-video"><iframe title="Mavi Barış 33. yıl videosu" loading="lazy" scrolling="no" src="https://www.instagram.com/reel/DXOvLw3gqVc/embed/"></iframe></div>
               <a class="ig-btn" href="https://www.instagram.com/mavvi_baris/reel/DXOvLw3gqVc/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.500A4.500 4.500 0 1 1 12 16.500 4.500 4.500 0 0 1 12 7.500Zm0 2A2.500 2.500 0 1 0 12 14.500 2.500 2.500 0 0 0 12 9.500ZM17.300 6a1.100 1.100 0 1 1 0 2.200 1.100 1.100 0 0 1 0-2.200Z"/></svg>Instagram’da izleyin</a>
             </div>
             <div class="story-copy">
@@ -618,7 +622,7 @@
             </figure>
             <div>
               <div class="eyebrow">Vizyonumuz</div>
-              <h2 id="vision-title" data-split data-highlight="kendi kahramanlığını">Her çocuğun kendi kahramanlığını keşfedebileceği bir alan.</h2>
+              <h2 id="vision-title" data-split data-highlight="kendi kahramanlığını" data-highlight-en="their own heroism.">Her çocuğun kendi kahramanlığını keşfedebileceği bir alan.</h2>
               <p class="vision-bio">Hacettepe Üniversitesi Çocuk Gelişimi ve Eğitimi Bölümü mezunu olan Nilgün Pekçağlıyan, aynı bölümde akademisyenlik yaptı. Meslek yaşamının ilk gününden beri; şeffaf, karşılıklı güvene dayalı ve bilimsel bir hizmet anlayışıyla binlerce çocuğa ve ailesine yolculukları boyunca eşlik ediyor.</p>
               <div class="vision-tags"><span>Şeffaflık</span><span>Karşılıklı güven</span><span>Bilimsel yaklaşım</span></div>
             </div>
@@ -660,9 +664,9 @@
           <figure class="team-photo"><img src="foto/MAVI_BARIS-047.jpg" alt="Mavi Barış ekibi toplantı masasında" loading="lazy" /><figcaption>Mavi Barış ekibi</figcaption></figure>
           <div class="team-grid">
             <div class="team-intro"><div class="eyebrow">Ekibimiz</div><h2 id="team-title">Birlikte düşünen, birlikte güçlenen bir ekip.</h2><p>Gelişim tek bir uzmanın değil; çocuk, aile ve ekip arasındaki güvenli iş birliğinin sonucu.</p><blockquote>“Dünyayı değiştiremezsiniz ancak bir çocuğun dünyasını değiştirebilirsiniz.”<cite>Mavi Barış’ın Kahramanları</cite></blockquote></div>
-            <article class="team-pill"><figure class="illo"><svg viewBox="0 0 320 230" role="img" aria-label="Eğitmen çocuğun göz hizasına eğilmiş, onu dinliyor"><defs><linearGradient id="ga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1fb"/><stop offset="1" stop-color="#cfd8f5"/></linearGradient></defs><rect width="320" height="230" fill="url(#ga)"/><circle class="drift" cx="258" cy="56" r="72" fill="#fff" opacity=".5"/><circle class="drift" style="--t:-4s" cx="34" cy="186" r="46" fill="#fff" opacity=".35"/><ellipse cx="160" cy="208" rx="124" ry="9" fill="#29377e" opacity=".12"/><g class="nod"><use href="#fig" x="52" y="34" width="70" height="175" fill="#29377e"/><path d="M104 112 q30 20 54 4" fill="none" stroke="#29377e" stroke-width="9" stroke-linecap="round"/></g><circle class="ring" cx="132" cy="66" r="8" fill="none" stroke="#ed9206" stroke-width="3"/><circle class="ring" style="--t:.9s" cx="132" cy="66" r="8" fill="none" stroke="#ed9206" stroke-width="3"/><g class="bob" style="--t:-1.2s"><use href="#fig" x="196" y="100" width="44" height="110" fill="#ed9206"/><path class="wave-arm" d="M226 148 l24 -24" fill="none" stroke="#ed9206" stroke-width="7" stroke-linecap="round"/></g><g fill="none" stroke="#ed9206" stroke-width="5" stroke-linecap="round"><path class="wave" style="--t:0s" d="M190 104 q-11 14 0 28"/><path class="wave" style="--t:.35s" d="M175 96 q-17 22 0 44"/><path class="wave" style="--t:.7s" d="M160 88 q-23 30 0 60"/></g><g transform="translate(244 82)"><g class="bubble" style="--t:0s"><circle r="16" fill="#fff"/><g fill="#4b60cf"><path d="M0 -3 c-4-7-14-1-8 6 l8 8 8-8 c6-7-4-13-8-6Z"/></g></g></g><g transform="translate(274 54)"><g class="bubble" style="--t:1.5s"><circle r="14" fill="#fff"/><path d="M0 -8 l2.4 5.2 5.6 .6 -4.2 3.8 1.2 5.6 -5 -2.9 -5 2.9 1.2 -5.6 -4.2 -3.8 5.6 -.6Z" fill="#ed9206"/></g></g><g transform="translate(232 40)"><g class="bubble" style="--t:3s"><circle r="13" fill="#fff"/><text y="5" text-anchor="middle" font-family="DM Sans, Arial" font-weight="700" font-size="15" fill="#29377e">?</text></g></g></svg><span>01</span></figure><div><h3>Çocuğu dinleriz</h3><p>Her çocuk kendi hikâyesinin kahramanı. Önce onu dinler; planı ihtiyaçları, ilgisi ve günlük hayatı üzerinden kurarız.</p></div></article>
-            <article class="team-pill"><figure class="illo"><svg viewBox="0 0 320 230" role="img" aria-label="Anne, baba ve çocuk el ele yürüyor"><defs><linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4de"/><stop offset="1" stop-color="#fbdcae"/></linearGradient></defs><rect width="320" height="230" fill="url(#gb)"/><circle class="glow" cx="252" cy="60" r="42" fill="#ed9206" opacity=".25"/><circle cx="252" cy="60" r="24" fill="#ed9206"/><g class="rays" stroke="#ed9206" stroke-width="4" stroke-linecap="round"><path d="M252 22 v-9"/><path d="M252 98 v9"/><path d="M214 60 h-9"/><path d="M290 60 h9"/><path d="M225 33 l-6-6"/><path d="M279 33 l6-6"/><path d="M225 87 l-6 6"/><path d="M279 87 l6 6"/></g><g class="cloud" style="--t:0s"><rect x="20" y="34" width="62" height="18" rx="9" fill="#fff"/><rect x="38" y="24" width="34" height="18" rx="9" fill="#fff"/></g><g class="cloud" style="--t:-9s"><rect x="120" y="58" width="46" height="14" rx="7" fill="#fff" opacity=".8"/></g><path class="hill" d="M-20 196 Q70 150 160 184 T340 172 V230 H-20Z" fill="#29377e" opacity=".12"/><path d="M0 204 Q90 178 170 198 T320 190 V230 H0Z" fill="#f4c98a"/><path class="road" d="M6 214 C 90 196 230 196 314 214" fill="none" stroke="#29377e" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14"/><g fill="#29377e" opacity=".5"><circle class="step" style="--t:0s" cx="22" cy="208" r="3"/><circle class="step" style="--t:.5s" cx="36" cy="204" r="3"/><circle class="step" style="--t:1s" cx="50" cy="201" r="3"/></g><g class="walk" style="--t:0s"><use href="#fig" x="60" y="50" width="60" height="150" fill="#29377e"/></g><g class="walk" style="--t:-.5s"><use href="#fig" x="134" y="98" width="42" height="104" fill="#ed9206"/></g><g class="walk" style="--t:-1s"><use href="#fig" x="190" y="56" width="58" height="146" fill="#4b60cf"/></g><g class="bob" fill="none" stroke-width="7" stroke-linecap="round"><path d="M114 130 q14 22 30 8" stroke="#29377e"/><path d="M168 138 q16 14 32 -8" stroke="#4b60cf"/></g><g transform="translate(155 84)"><g class="bubble" style="--t:0s"><g fill="#ed9206"><path d="M0 -3 c-4-7-14-1-8 6 l8 8 8-8 c6-7-4-13-8-6Z"/></g></g></g><g transform="translate(155 84)"><g class="bubble" style="--t:2.2s"><g fill="#4b60cf" transform="scale(.7)"><path d="M0 -3 c-4-7-14-1-8 6 l8 8 8-8 c6-7-4-13-8-6Z"/></g></g></g></svg><span>02</span></figure><div><h3>Aileyle yan yana</h3><p>Bilgimizi ve yüreğimizi ailelerle paylaşır; küçük, uygulanabilir adımlarla yolculuğa birlikte eşlik ederiz.</p></div></article>
-            <article class="team-pill"><figure class="illo"><svg viewBox="0 0 320 230" role="img" aria-label="Ekip masada; herkesin fikri bir araya gelip bir ışık yakıyor"><defs><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1fb"/><stop offset="1" stop-color="#d5dcf7"/></linearGradient></defs><rect width="320" height="230" fill="url(#gc)"/><circle class="drift" cx="40" cy="44" r="52" fill="#fff" opacity=".45"/><g class="bob" style="--t:0s"><use href="#fig" x="36" y="72" width="48" height="120" fill="#4b60cf"/></g><g class="bob" style="--t:-.6s"><use href="#fig" x="96" y="54" width="54" height="135" fill="#29377e"/></g><g class="bob" style="--t:-1.2s"><use href="#fig" x="170" y="54" width="54" height="135" fill="#ed9206"/></g><g class="bob" style="--t:-1.8s"><use href="#fig" x="236" y="72" width="48" height="120" fill="#29377e"/></g><ellipse cx="160" cy="190" rx="126" ry="24" fill="#fff"/><ellipse cx="160" cy="190" rx="126" ry="24" fill="none" stroke="#29377e" stroke-width="3" opacity=".2"/><g transform="translate(160 186)"><path d="M0 -8 L-34 -14 V8 L0 14Z" fill="#cfd8f5"/><path d="M0 -8 L34 -14 V8 L0 14Z" fill="#e3e8f6"/><path class="page" d="M0 -8 L30 -14 V8 L0 14Z" fill="#fff" stroke="#29377e" stroke-opacity=".2"/></g><circle class="idea" style="--tx:100px;--ty:-32px;--t:0s" cx="60" cy="66" r="6" fill="#4b60cf"/><circle class="idea" style="--tx:37px;--ty:-14px;--t:.15s" cx="123" cy="48" r="6" fill="#29377e"/><circle class="idea" style="--tx:-37px;--ty:-14px;--t:.3s" cx="197" cy="48" r="6" fill="#ed9206"/><circle class="idea" style="--tx:-100px;--ty:-32px;--t:.45s" cx="260" cy="66" r="6" fill="#29377e"/><circle class="bulb-glow" cx="160" cy="34" r="30" fill="#ed9206"/><g class="bulb"><circle cx="160" cy="34" r="15" fill="#ed9206"/><path d="M154 33 q6 -8 12 0" fill="none" stroke="#fff" stroke-width="2.500" stroke-linecap="round"/></g><g class="bulb-rays" stroke="#ed9206" stroke-width="4" stroke-linecap="round"><path d="M160 8 v-7"/><path d="M134 34 h-8"/><path d="M186 34 h8"/><path d="M141 15 l-6-6"/><path d="M179 15 l6-6"/><path d="M141 53 l-6 6"/><path d="M179 53 l6 6"/></g><g class="orbit"><circle cx="160" cy="190" r="5" fill="#ed9206"/></g></svg><span>03</span></figure><div><h3>Öğrenmeye açık</h3><p>Farklı alanlardan uzmanlar birlikte düşünür; her zaman daha iyisini yapabileceğimiz inancıyla kendimizi geliştiririz.</p></div></article>
+            <article class="team-pill"><figure class="illo"><svg viewBox="0 0 320 262" role="img" aria-label="Eğitmen çocuğun göz hizasına eğilmiş, onu dinliyor"><defs><linearGradient id="ga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1fb"/><stop offset="1" stop-color="#cfd8f5"/></linearGradient></defs><rect width="320" height="262" fill="url(#ga)"/><g transform="translate(0 32)"><circle class="drift" cx="258" cy="56" r="72" fill="#fff" opacity=".5"/><circle class="drift" style="--t:-4s" cx="34" cy="186" r="46" fill="#fff" opacity=".35"/><ellipse cx="160" cy="208" rx="124" ry="9" fill="#29377e" opacity=".12"/><g class="nod"><use href="#fig" x="52" y="34" width="70" height="175" fill="#29377e"/><path d="M104 112 q30 20 54 4" fill="none" stroke="#29377e" stroke-width="9" stroke-linecap="round"/></g><circle class="ring" cx="132" cy="66" r="8" fill="none" stroke="#ed9206" stroke-width="3"/><circle class="ring" style="--t:.9s" cx="132" cy="66" r="8" fill="none" stroke="#ed9206" stroke-width="3"/><g class="bob" style="--t:-1.2s"><use href="#fig" x="196" y="100" width="44" height="110" fill="#ed9206"/><path class="wave-arm" d="M226 148 l24 -24" fill="none" stroke="#ed9206" stroke-width="7" stroke-linecap="round"/></g><g fill="none" stroke="#ed9206" stroke-width="5" stroke-linecap="round"><path class="wave" style="--t:0s" d="M190 104 q-11 14 0 28"/><path class="wave" style="--t:.35s" d="M175 96 q-17 22 0 44"/><path class="wave" style="--t:.7s" d="M160 88 q-23 30 0 60"/></g><g transform="translate(244 82)"><g class="bubble" style="--t:0s"><circle r="16" fill="#fff"/><g fill="#4b60cf"><path d="M0 -3 c-4-7-14-1-8 6 l8 8 8-8 c6-7-4-13-8-6Z"/></g></g></g><g transform="translate(274 54)"><g class="bubble" style="--t:1.5s"><circle r="14" fill="#fff"/><path d="M0 -8 l2.4 5.2 5.6 .6 -4.2 3.8 1.2 5.6 -5 -2.9 -5 2.9 1.2 -5.6 -4.2 -3.8 5.6 -.6Z" fill="#ed9206"/></g></g><g transform="translate(232 40)"><g class="bubble" style="--t:3s"><circle r="13" fill="#fff"/><text y="5" text-anchor="middle" font-family="DM Sans, Arial" font-weight="700" font-size="15" fill="#29377e">?</text></g></g></g></svg><span>01</span></figure><div><h3>Çocuğu dinleriz</h3><p>Her çocuk kendi hikâyesinin kahramanı. Önce onu dinler; planı ihtiyaçları, ilgisi ve günlük hayatı üzerinden kurarız.</p></div></article>
+            <article class="team-pill"><figure class="illo"><svg viewBox="0 0 320 262" role="img" aria-label="Anne, baba ve çocuk el ele yürüyor"><defs><linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4de"/><stop offset="1" stop-color="#fbdcae"/></linearGradient></defs><rect width="320" height="262" fill="url(#gb)"/><g transform="translate(0 32)"><circle class="glow" cx="284" cy="6" r="28" fill="#ed9206" opacity=".25"/><circle cx="284" cy="6" r="16" fill="#ed9206"/><g class="rays" stroke="#ed9206" stroke-width="3.5" stroke-linecap="round"><path d="M284 -18 v-7"/><path d="M284 30 v7"/><path d="M260 6 h-7"/><path d="M308 6 h7"/><path d="M267 -11 l-5-5"/><path d="M301 -11 l5-5"/><path d="M267 23 l-5 5"/><path d="M301 23 l5 5"/></g><g class="cloud" style="--t:0s"><rect x="20" y="-14" width="62" height="16" rx="8" fill="#fff"/><rect x="38" y="-23" width="34" height="16" rx="8" fill="#fff"/></g><g class="cloud" style="--t:-9s"><rect x="120" y="-4" width="46" height="12" rx="6" fill="#fff" opacity=".8"/></g><path class="hill" d="M-20 196 Q70 150 160 184 T340 172 V230 H-20Z" fill="#29377e" opacity=".12"/><path d="M0 204 Q90 178 170 198 T320 190 V230 H0Z" fill="#f4c98a"/><path class="road" d="M6 214 C 90 196 230 196 314 214" fill="none" stroke="#29377e" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14"/><g fill="#29377e" opacity=".5"><circle class="step" style="--t:0s" cx="22" cy="208" r="3"/><circle class="step" style="--t:.5s" cx="36" cy="204" r="3"/><circle class="step" style="--t:1s" cx="50" cy="201" r="3"/></g><g class="walk" style="--t:0s"><use href="#fig" x="60" y="50" width="60" height="150" fill="#29377e"/></g><g class="walk" style="--t:-.5s"><use href="#fig" x="134" y="98" width="42" height="104" fill="#ed9206"/></g><g class="walk" style="--t:-1s"><use href="#fig" x="190" y="56" width="58" height="146" fill="#4b60cf"/></g><g class="bob" fill="none" stroke-width="7" stroke-linecap="round"><path d="M114 130 q14 22 30 8" stroke="#29377e"/><path d="M168 138 q16 14 32 -8" stroke="#4b60cf"/></g><g transform="translate(155 84)"><g class="bubble" style="--t:0s"><g fill="#ed9206"><path d="M0 -3 c-4-7-14-1-8 6 l8 8 8-8 c6-7-4-13-8-6Z"/></g></g></g><g transform="translate(155 84)"><g class="bubble" style="--t:2.2s"><g fill="#4b60cf" transform="scale(.7)"><path d="M0 -3 c-4-7-14-1-8 6 l8 8 8-8 c6-7-4-13-8-6Z"/></g></g></g></g></svg><span>02</span></figure><div><h3>Aileyle yan yana</h3><p>Bilgimizi ve yüreğimizi ailelerle paylaşır; küçük, uygulanabilir adımlarla yolculuğa birlikte eşlik ederiz.</p></div></article>
+            <article class="team-pill"><figure class="illo"><svg viewBox="0 0 320 262" role="img" aria-label="Ekip masada; herkesin fikri bir araya gelip bir ışık yakıyor"><defs><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1fb"/><stop offset="1" stop-color="#d5dcf7"/></linearGradient></defs><rect width="320" height="262" fill="url(#gc)"/><g transform="translate(0 32)"><circle class="drift" cx="40" cy="44" r="52" fill="#fff" opacity=".45"/><g class="bob" style="--t:0s"><use href="#fig" x="36" y="72" width="48" height="120" fill="#4b60cf"/></g><g class="bob" style="--t:-.6s"><use href="#fig" x="96" y="54" width="54" height="135" fill="#29377e"/></g><g class="bob" style="--t:-1.2s"><use href="#fig" x="170" y="54" width="54" height="135" fill="#ed9206"/></g><g class="bob" style="--t:-1.8s"><use href="#fig" x="236" y="72" width="48" height="120" fill="#29377e"/></g><ellipse cx="160" cy="190" rx="126" ry="24" fill="#fff"/><ellipse cx="160" cy="190" rx="126" ry="24" fill="none" stroke="#29377e" stroke-width="3" opacity=".2"/><g transform="translate(160 186)"><path d="M0 -8 L-34 -14 V8 L0 14Z" fill="#cfd8f5"/><path d="M0 -8 L34 -14 V8 L0 14Z" fill="#e3e8f6"/><path class="page" d="M0 -8 L30 -14 V8 L0 14Z" fill="#fff" stroke="#29377e" stroke-opacity=".2"/></g><circle class="idea" style="--tx:100px;--ty:-60px;--t:0s" cx="60" cy="66" r="6" fill="#4b60cf"/><circle class="idea" style="--tx:37px;--ty:-42px;--t:.15s" cx="123" cy="48" r="6" fill="#29377e"/><circle class="idea" style="--tx:-37px;--ty:-42px;--t:.3s" cx="197" cy="48" r="6" fill="#ed9206"/><circle class="idea" style="--tx:-100px;--ty:-60px;--t:.45s" cx="260" cy="66" r="6" fill="#29377e"/><circle class="bulb-glow" cx="160" cy="6" r="22" fill="#ed9206"/><g class="bulb"><circle cx="160" cy="6" r="14" fill="#ed9206"/><path d="M154 5 q6 -8 12 0" fill="none" stroke="#fff" stroke-width="2.500" stroke-linecap="round"/></g><g class="bulb-rays" stroke="#ed9206" stroke-width="3.5" stroke-linecap="round"><path d="M160 -14 v-6"/><path d="M138 6 h-7"/><path d="M182 6 h7"/><path d="M144 -9 l-5-5"/><path d="M176 -9 l5-5"/></g><g class="orbit"><circle cx="160" cy="190" r="5" fill="#ed9206"/></g></g></svg><span>03</span></figure><div><h3>Öğrenmeye açık</h3><p>Farklı alanlardan uzmanlar birlikte düşünür; her zaman daha iyisini yapabileceğimiz inancıyla kendimizi geliştiririz.</p></div></article>
           </div>
         </section>
       </main>
@@ -754,6 +758,7 @@
     <dialog id="kvkk-dialog" aria-labelledby="kvkk-title"><button class="dialog-close" type="button" data-close aria-label="Kapat">×</button><div class="dialog-body"><h3 id="kvkk-title">KVKK aydınlatma metni</h3><p><b>Taslak.</b> Bu alan, kurumun hukuk danışmanının onayladığı aydınlatma metniyle değiştirilecek.</p><ul><li>Veri sorumlusu: Mavi Barış Özel Eğitim</li><li>İşlenen veriler: ad soyad, telefon ve iletide paylaştığınız bilgiler</li><li>Amaç: yalnızca talebinize dönüş yapmak ve görüşme planlamak</li><li>Haklarınız: 6698 sayılı Kanun’un 11. maddesi kapsamındaki başvuru hakları</li></ul></div></dialog>
     <dialog id="lightbox" class="lightbox" aria-label="Fotoğraf"><button class="dialog-close" type="button" data-close aria-label="Kapat">×</button><img id="lightbox-img" alt="" /></dialog>
 
+    <script src="lang-en.js"></script>
     <script>
       /* ---- Kurum bilgileri: tek yerden yönetilir ---- */
       const SITE = {
@@ -798,6 +803,54 @@
       const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
       try { sessionStorage.setItem('mbIntro', '1'); } catch (e) {}
       $('#year').textContent = new Date().getFullYear();
+
+      /* ---- Dil: Türkçe / İngilizce ---- */
+      const EN = window.MB_EN || {};
+      const TITLES = { tr: document.title, en: 'Mavi Barış Special Education — Ankara' };
+      let lang = 'tr';
+      try { if (localStorage.getItem('mbLang') === 'en') lang = 'en'; } catch (e) {}
+      const norm = (t) => t.trim().replace(/\s+/g, ' ');
+      const tr = (t) => (lang === 'en' && EN[norm(t)]) || t;
+      function applyLang() {
+        document.documentElement.lang = lang;
+        document.title = TITLES[lang];
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach((n) => {
+          const parent = n.parentNode;
+          if (!parent || /^(SCRIPT|STYLE)$/.test(parent.nodeName) || parent.closest('[data-split], #lang-btn')) return;
+          const cur = n.nodeValue;
+          if (n.__tr === undefined || (cur !== n.__tr && cur !== n.__en)) n.__tr = cur;
+          const key = norm(n.__tr);
+          if (!key) return;
+          const en = EN[key];
+          if (lang === 'en' && en) { n.__en = n.__tr.replace(n.__tr.trim(), en); if (cur !== n.__en) n.nodeValue = n.__en; }
+          else if (cur !== n.__tr) n.nodeValue = n.__tr;
+        });
+        $$('[placeholder], [aria-label]').forEach((el) => ['placeholder', 'aria-label'].forEach((a) => {
+          if (!el.hasAttribute(a) || el.id === 'lang-btn' || el.hasAttribute('data-split')) return;
+          const k = '__tr_' + a, cur = el.getAttribute(a);
+          if (el[k] === undefined || (cur !== el[k] && cur !== el[k + '_en'])) el[k] = cur;
+          const en = EN[norm(el[k])];
+          if (lang === 'en' && en) { el[k + '_en'] = en; el.setAttribute(a, en); } else el.setAttribute(a, el[k]);
+        }));
+        $$('[data-split]').forEach((h) => {
+          if (!h.dataset.tr) h.dataset.tr = h.getAttribute('aria-label') || h.textContent.trim();
+          const text = tr(h.dataset.tr);
+          const hl = ((lang === 'en' ? h.dataset.highlightEn : h.dataset.highlight) || '').split(/\s+/).filter(Boolean);
+          h.setAttribute('aria-label', text);
+          h.innerHTML = text.split(/\s+/).map((w, i) => `<span aria-hidden="true" class="${hl.includes(w) ? 'hl' : ''}" style="--i:${i}">${w}</span>`).join(' ');
+        });
+        const btn = $('#lang-btn');
+        btn.textContent = lang === 'en' ? 'Türkçe' : 'English';
+        btn.setAttribute('aria-label', lang === 'en' ? 'Türkçeye geç' : 'Switch to English');
+      }
+      $('#lang-btn').addEventListener('click', () => {
+        lang = lang === 'en' ? 'tr' : 'en';
+        try { localStorage.setItem('mbLang', lang); } catch (e) {}
+        applyLang();
+      });
 
       /* ---- Menü ---- */
       const menuButton = $('.menu');
@@ -845,6 +898,7 @@
         $('#pd-list').innerHTML = p.points.map((x) => `<li>${x}</li>`).join('');
         $('#pd-cta').onclick = () => { topicSelect.value = p.title; programDialog.close(); };
         programDialog.showModal();
+        applyLang();
       }
 
       /* ---- Diyaloglar ---- */
@@ -939,7 +993,7 @@
       const cards = reels.map((reel, index) => {
         const card = document.createElement('article');
         card.className = 'arc-card';
-        card.innerHTML = `<div class="clip-video"><iframe title="${reel.title}" loading="lazy"></iframe></div><button class="arc-cover" type="button" aria-label="${pad(index + 1)}. video: ${reel.title}"></button>`;
+        card.innerHTML = `<div class="clip-video"><iframe title="${reel.title}" loading="lazy" scrolling="no"></iframe></div><button class="arc-cover" type="button" aria-label="${pad(index + 1)}. video: ${reel.title}"></button>`;
         card.querySelector('.arc-cover').addEventListener('click', () => { if (!dragMoved) renderReel(index); });
         arcStage.appendChild(card);
         return card;
@@ -971,6 +1025,7 @@
         $('#reel-description').textContent = reel.description;
         $('#reel-link').href = `https://www.instagram.com/mavvi_baris/reel/${reel.id}/`;
         $('#reel-count').textContent = `${pad(activeReel + 1)} / ${pad(reels.length)}`;
+        applyLang();
       }
       $('#reel-prev').addEventListener('click', () => renderReel(activeReel - 1));
       $('#reel-next').addEventListener('click', () => renderReel(activeReel + 1));
@@ -1030,11 +1085,16 @@
         e.preventDefault();
         if (!form.checkValidity()) { form.reportValidity(); return; }
         const d = Object.fromEntries(new FormData(form));
-        const text = ['Merhaba, Mavi Barış web sitesinden yazıyorum.', `Ad Soyad: ${d.ad}`, `Telefon: ${d.tel}`, d.yas && `Çocuğun yaşı: ${d.yas}`, d.konu && `Konu: ${d.konu}`, d.mesaj && `Mesaj: ${d.mesaj}`].filter(Boolean).join('\n');
+        const L = lang === 'en'
+          ? { hi: 'Hello, I am writing from the Mavi Barış website.', ad: 'Name', tel: 'Phone', yas: "Child's age", konu: 'Topic', mesaj: 'Message' }
+          : { hi: 'Merhaba, Mavi Barış web sitesinden yazıyorum.', ad: 'Ad Soyad', tel: 'Telefon', yas: 'Çocuğun yaşı', konu: 'Konu', mesaj: 'Mesaj' };
+        const text = [L.hi, `${L.ad}: ${d.ad}`, `${L.tel}: ${d.tel}`, d.yas && `${L.yas}: ${d.yas}`, d.konu && `${L.konu}: ${tr(d.konu)}`, d.mesaj && `${L.mesaj}: ${d.mesaj}`].filter(Boolean).join('\n');
         if (SITE.whatsapp) { open(waLink(text), '_blank', 'noopener'); note.textContent = 'WhatsApp açıldı; mesajı gönder tuşuna basarak iletebilirsiniz.'; }
-        else if (SITE.email) { location.href = `mailto:${SITE.email}?subject=${encodeURIComponent('Web sitesinden görüşme talebi')}&body=${encodeURIComponent(text)}`; note.textContent = 'E-posta uygulamanız açıldı; gönder tuşuna basarak iletebilirsiniz.'; }
+        else if (SITE.email) { location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(tr('Web sitesinden görüşme talebi'))}&body=${encodeURIComponent(text)}`; note.textContent = 'E-posta uygulamanız açıldı; gönder tuşuna basarak iletebilirsiniz.'; }
         else { note.textContent = 'Form henüz bir kanala bağlı değil (ön tasarım). Şimdilik bizi telefonla arayabilirsiniz.'; }
+        applyLang();
       });
+      applyLang();
     </script>
   </body>
 </html>
